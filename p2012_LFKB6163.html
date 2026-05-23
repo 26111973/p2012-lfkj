@@ -1329,13 +1329,11 @@ function applyState(s){
       vacState.qfuMag  = s.vacState.qfuMag  !== undefined ? s.vacState.qfuMag  : vacState.qfuMag;
       vacState.rwyLenM = s.vacState.rwyLenM !== undefined ? s.vacState.rwyLenM : vacState.rwyLenM;
     } else {
-      // Aéroport différent : restauration complète
-      vacState = {...VAC_DEFAULT, ...s.vacState};
-      const activeCfg = VAC_CONFIGS[incomingAP];
-      if(activeCfg && activeCfg.defaultCx !== undefined){
-        vacState.cx = activeCfg.defaultCx;
-        vacState.cy = activeCfg.defaultCy;
-      }
+      // Aéroport différent : restaurer le vacState sauvegardé pour cet AP
+      vacStates[vacActiveAP] = JSON.parse(JSON.stringify(vacState)); // sauvegarder l'AP courant
+      vacState = getVACStateFor(incomingAP);
+      vacState.qfuMag  = s.vacState.qfuMag  !== undefined ? s.vacState.qfuMag  : vacState.qfuMag;
+      vacState.rwyLenM = s.vacState.rwyLenM !== undefined ? s.vacState.rwyLenM : vacState.rwyLenM;
     }
     // Resync controls
     const slQfu = document.getElementById('vac-qfu');
@@ -1973,6 +1971,9 @@ function loadLastState(){
 // ═══════════════════════════════════════════════════════════════
 loadPersistedProfiles();
 renderProfileList();
+loadVACState(); // charger tous les vacStates sauvegardés
+// Restaurer le vacState de l'AP actif
+vacState = getVACStateFor(vacActiveAP);
 const restored = loadLastState();
 if(!restored) setMode('AE');
 window.addEventListener('resize', update);
@@ -2118,19 +2119,33 @@ function geo2pxOf(cfg,lat,lon){ return {x:(lon-cfg.lonRef0)/lonPxOf(cfg)+cfg.xRe
 
 // ── État piste
 const VAC_DEFAULT = { cx:634.5, cy:698, qfuMag:5, rwyLenM:3032, zoom:1, panX:0, panY:0 };
-const VAC_STORAGE_KEY = 'p2012_vac_state_v1';
+const VAC_STORAGE_KEY = 'p2012_vac_states_v2'; // v2 = par aéroport
+
+// vacStates : un état par aéroport { LFKF: {...}, LFKJ: {...}, ... }
+let vacStates = {};
 
 function saveVACState(){
-  try{ localStorage.setItem(VAC_STORAGE_KEY, JSON.stringify(vacState)); }catch(e){}
+  try{
+    vacStates[vacActiveAP] = JSON.parse(JSON.stringify(vacState));
+    localStorage.setItem(VAC_STORAGE_KEY, JSON.stringify(vacStates));
+  }catch(e){}
 }
 function loadVACState(){
   try{
     const raw = localStorage.getItem(VAC_STORAGE_KEY);
     if(!raw) return false;
-    const saved = JSON.parse(raw);
-    vacState = {...VAC_DEFAULT, ...saved};
+    vacStates = JSON.parse(raw);
     return true;
   }catch(e){ return false; }
+}
+function getVACStateFor(ap){
+  if(vacStates[ap]) return {...VAC_DEFAULT, ...vacStates[ap]};
+  // Pas de state sauvegardé → utiliser les defaults de la config
+  const cfg = VAC_CONFIGS[ap];
+  if(cfg) return { cx:cfg.defaultCx, cy:cfg.defaultCy,
+                   qfuMag:cfg.defaultQFU, rwyLenM:cfg.defaultLen,
+                   zoom:1, panX:0, panY:0 };
+  return {...VAC_DEFAULT};
 }
 const RWY_VISUAL_PX = 56.1; // 2480m à l'échelle corrigée
 // qfuMag=45 = QFU réel affiché directement (displayOffset=0)
@@ -2178,11 +2193,17 @@ function rotRwy(deltaDeg){
 }
 
 function resetVACPos(){
-  vacState = { ...VAC_DEFAULT };
-  document.getElementById('vac-qfu').value = VAC_DEFAULT.qfuMag;
+  // Reset uniquement l'AP courant vers ses valeurs par défaut
+  const cfg = vacCfg();
+  vacState = { cx:cfg.defaultCx, cy:cfg.defaultCy,
+               qfuMag:cfg.defaultQFU, rwyLenM:cfg.defaultLen,
+               zoom:1, panX:0, panY:0 };
+  vacStates[vacActiveAP] = JSON.parse(JSON.stringify(vacState));
+  saveVACState();
+  document.getElementById('vac-qfu').value = Math.round(vacState.qfuMag);
   document.getElementById('vac-qfu-lbl').textContent = String(qfuDisplay()).padStart(3,'0')+'°M';
-  document.getElementById('vac-rwylen').value = VAC_DEFAULT.rwyLenM;
-  document.getElementById('vac-len-lbl').textContent = VAC_DEFAULT.rwyLenM+' m';
+  document.getElementById('vac-rwylen').value = vacState.rwyLenM;
+  document.getElementById('vac-len-lbl').textContent = vacState.rwyLenM+' m';
   drawCompass(); drawVACOverlay();
 }
 
@@ -2350,14 +2371,16 @@ function updateCompassFromEvent(e){
 
 function switchVACAP(ap){
   if(!VAC_CONFIGS[ap]) return;
+  // Sauvegarder l'état courant avant de switcher
+  vacStates[vacActiveAP] = JSON.parse(JSON.stringify(vacState));
   vacActiveAP = ap;
   const cfg = vacCfg();
   const lbl = document.getElementById('vac-ap-label');
   if(lbl) lbl.textContent = ap+' '+cfg.name;
   const sel = document.getElementById('vac-ap-select');
   if(sel) sel.value = ap;
-  vacState = { qfuMag:cfg.defaultQFU, rwyLenM:cfg.defaultLen,
-               cx:cfg.defaultCx, cy:cfg.defaultCy, zoom:1, panX:0, panY:0 };
+  // Restaurer l'état sauvegardé pour ce nouvel AP
+  vacState = getVACStateFor(ap);
   const slQfu=document.getElementById('vac-qfu');
   const slLen=document.getElementById('vac-rwylen');
   const lblQfu=document.getElementById('vac-qfu-lbl');
