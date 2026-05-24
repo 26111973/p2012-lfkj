@@ -1219,7 +1219,7 @@ const AFM = {
 // ═══════════════════════════════════════════════════════════════
 let mode = 'AE';
 let obstacles = defaultObstacles();
-const BUILTIN_PROFILES ={"LFKB-16":{"mode":"AE","fields":{"ap-oaci":"LFKB","ap-name":"Bastia-Poretta","ap-qfu":"160","ap-rwy-len":"2520","ap-thr-ft":"26","ap-thr-m":"7.9","sl-mass":"3680","sl-alt":"0","sl-temp":"15","sl-surf":"1.0","sl-eap":"0","in-eap":"0","w-dir":"160","w-spd":"8"},"obstacles":[{"name":"Pylône / antenne zone nord","dist":300,"altFt":82,"htM":18,"showOnMap":true},{"name":"Arbre ou arbuste zone boisée 1","dist":700,"altFt":65,"htM":12,"showOnMap":true},{"name":"Ligne électrique HT","dist":1200,"altFt":59,"htM":20,"showOnMap":true},{"name":"Bâtiment industriel","dist":1800,"altFt":85,"htM":15,"showOnMap":true},{"name":"Relief côtier SE","dist":2600,"altFt":130,"htM":0,"showOnMap":true},{"name":"Arbre ou arbuste zone boisée 2","dist":3200,"altFt":148,"htM":10,"showOnMap":true},{"name":"Relief montagneux Est","dist":4500,"altFt":820,"htM":0,"showOnMap":true}],"vacState":{"cx":517,"cy":863,"qfuMag":160,"rwyLenM":2520,"zoom":1,"panX":0,"panY":0}},"LFKB-34":{"mode":"AE","fields":{"ap-oaci":"LFKB","ap-name":"Bastia-Poretta","ap-qfu":"340","ap-rwy-len":"2520","ap-thr-ft":"26","ap-thr-m":"7.9","sl-mass":"3680","sl-alt":"0","sl-temp":"15","sl-surf":"1.0","sl-eap":"0","in-eap":"0","w-dir":"340","w-spd":"10"},"obstacles":[{"name":"Balisage / infrastructure seuil 34","dist":150,"altFt":56,"htM":8,"showOnMap":true},{"name":"Végétation basse zone humide","dist":500,"altFt":39,"htM":6,"showOnMap":true},{"name":"Ligne électrique BT","dist":1100,"altFt":49,"htM":12,"showOnMap":true},{"name":"Bâtiment / hangar","dist":1700,"altFt":72,"htM":12,"showOnMap":true},{"name":"Relief massif montagneux NO","dist":2800,"altFt":1150,"htM":0,"showOnMap":true},{"name":"Chaîne montagneuse — point critique","dist":4200,"altFt":3500,"htM":0,"showOnMap":true}],"vacState":{"cx":517,"cy":863,"qfuMag":340,"rwyLenM":2520,"zoom":1,"panX":0,"panY":0}},"LFKC-18":{"mode":"AE","fields":{"ap-oaci":"LFKC","ap-name":"Calvi Ste-Catherine","ap-qfu":"180","ap-rwy-len":"1500","ap-thr-ft":"210","ap-thr-m":"64.0","sl-mass":"3680","sl-alt":"200","sl-temp":"15","sl-surf":"1.0","sl-eap":"0","in-eap":"0","w-dir":"180","w-spd":"8"},"obstacles":[{"name":"Relief Col de Marsolinu","dist":2000,"altFt":2930,"htM":0,"showOnMap":true},{"name":"Relief montagneux S","dist":4000,"altFt":4557,"htM":0,"showOnMap":true}],"vacState":{"cx":491,"cy":655,"qfuMag":180,"rwyLenM":1500,"zoom":1,"panX":0,"panY":0}},"LFKC-36":{"mode":"AE","fields":{"ap-oaci":"LFKC","ap-name":"Calvi Ste-Catherine","ap-qfu":"360","ap-rwy-len":"1500","ap-thr-ft":"210","ap-thr-m":"64.0","sl-mass":"3680","sl-alt":"200","sl-temp":"15","sl-surf":"1.0","sl-eap":"0","in-eap":"0","w-dir":"360","w-spd":"10"},"obstacles":[{"name":"CV 375 (zone parachutisme)","dist":500,"altFt":375,"htM":0,"showOnMap":true},{"name":"Relief NW côtier","dist":1500,"altFt":434,"htM":0,"showOnMap":true}],"vacState":{"cx":491,"cy":655,"qfuMag":360,"rwyLenM":1500,"zoom":1,"panX":0,"panY":0}},"LFKF-09":{"mode":"AE","fields":{"ap-oaci":"LFKF","ap-name":"Figari Sud Corse","ap-qfu":"90","ap-rwy-len":"2140","ap-thr-ft":"87","ap-thr-m":"26.5","sl-mass":"3680","sl-alt":"100","sl-temp":"15","sl-surf":"1.0","sl-eap":"0","in-eap":"0","w-dir":"90","w-spd":"8"},"obstacles":[],"vacState":{"cx":634.5,"cy":698,"qfuMag":10,"rwyLenM":2140,"zoom":1,"panX":0,"panY":0},"vacAP":"LFKF"},"LFKF-27":{"mode":"AE","fields":{"ap-oaci":"LFKF","ap-name":"Figari Sud Corse","ap-qfu":"270","ap-rwy-len":"2140","ap-thr-ft":"87","ap-thr-m":"26.5","sl-mass":"3680","sl-alt":"100","sl-temp":"15","sl-surf":"1.0","sl-eap":"0","in-eap":"0","w-dir":"270","w-spd":"8"},"obstacles":[],"vacState":{"cx":634.5,"cy":698,"qfuMag":190,"rwyLenM":2140,"zoom":1,"panX":0,"panY":0},"vacAP":"LFKF"},"LFKJ-20":{"mode":"AE","fields":{"ap-oaci":"LFKJ","ap-name":"Ajaccio Napoléon Bonaparte","ap-qfu":"202","ap-rwy-len":"2300","ap-thr-ft":"18","ap-thr-m":"5.5","sl-mass":"3680","sl-alt":"0","sl-temp":"15","sl-surf":"1.0","sl-eap":"0","in-eap":"0","w-dir":"202","w-spd":"8"},"obstacles":[],"vacState":{"cx":438,"cy":620,"qfuMag":209,"rwyLenM":2300,"zoom":1,"panX":0,"panY":0},"vacAP":"LFKJ"},"LFKJ-02":{"mode":"AE","fields":{"ap-oaci":"LFKJ","ap-name":"Ajaccio Napoléon Bonaparte","ap-qfu":"22","ap-rwy-len":"2300","ap-thr-ft":"18","ap-thr-m":"5.5","sl-mass":"3680","sl-alt":"0","sl-temp":"15","sl-surf":"1.0","sl-eap":"0","in-eap":"0","w-dir":"22","w-spd":"8"},"obstacles":[],"vacState":{"cx":438,"cy":620,"qfuMag":29,"rwyLenM":2300,"zoom":1,"panX":0,"panY":0},"vacAP":"LFKJ"}}; // profils pré-chargés (ne jamais modifier)
+const BUILTIN_PROFILES ={"LFKB-16":{"mode":"AE","fields":{"ap-oaci":"LFKB","ap-name":"Bastia-Poretta","ap-qfu":"160","ap-rwy-len":"2520","ap-thr-ft":"26","ap-thr-m":"3.9","sl-mass":"3680","sl-alt":"0","sl-temp":"15","sl-surf":"1.0","sl-eap":"0","in-eap":"0","w-dir":"160","w-spd":"8"},"obstacles":[{"name":"Pylône / antenne zone nord","dist":300,"altFt":82,"htM":18,"showOnMap":true},{"name":"Arbre ou arbuste zone boisée 1","dist":700,"altFt":65,"htM":12,"showOnMap":true},{"name":"Ligne électrique HT","dist":1200,"altFt":59,"htM":20,"showOnMap":true},{"name":"Bâtiment industriel","dist":1800,"altFt":85,"htM":15,"showOnMap":true},{"name":"Relief côtier SE","dist":2600,"altFt":130,"htM":0,"showOnMap":true},{"name":"Arbre ou arbuste zone boisée 2","dist":3200,"altFt":148,"htM":10,"showOnMap":true},{"name":"Relief montagneux Est","dist":4500,"altFt":820,"htM":0,"showOnMap":true}],"vacState":{"cx":517,"cy":863,"qfuMag":160,"rwyLenM":2520,"zoom":1,"panX":0,"panY":0}},"LFKB-34":{"mode":"AE","fields":{"ap-oaci":"LFKB","ap-name":"Bastia-Poretta","ap-qfu":"340","ap-rwy-len":"2520","ap-thr-ft":"26","ap-thr-m":"7.9","sl-mass":"3680","sl-alt":"0","sl-temp":"15","sl-surf":"1.0","sl-eap":"0","in-eap":"0","w-dir":"340","w-spd":"10"},"obstacles":[{"name":"Balisage / infrastructure seuil 34","dist":150,"altFt":56,"htM":8,"showOnMap":true},{"name":"Végétation basse zone humide","dist":500,"altFt":39,"htM":6,"showOnMap":true},{"name":"Ligne électrique BT","dist":1100,"altFt":49,"htM":12,"showOnMap":true},{"name":"Bâtiment / hangar","dist":1700,"altFt":72,"htM":12,"showOnMap":true},{"name":"Relief massif montagneux NO","dist":2800,"altFt":1150,"htM":0,"showOnMap":true},{"name":"Chaîne montagneuse — point critique","dist":4200,"altFt":3500,"htM":0,"showOnMap":true}],"vacState":{"cx":517,"cy":863,"qfuMag":340,"rwyLenM":2520,"zoom":1,"panX":0,"panY":0}},"LFKC-18":{"mode":"AE","fields":{"ap-oaci":"LFKC","ap-name":"Calvi Ste-Catherine","ap-qfu":"177","ap-rwy-len":"2310","ap-thr-ft":"66","ap-thr-m":"20.0","sl-mass":"3680","sl-alt":"200","sl-temp":"15","sl-surf":"1.0","sl-eap":"0","in-eap":"0","w-dir":"177","w-spd":"8"},"obstacles":[{"name":"Relief Col de Marsolinu","dist":2000,"altFt":2930,"htM":0,"showOnMap":true},{"name":"Relief montagneux S","dist":4000,"altFt":4557,"htM":0,"showOnMap":true}],"vacState":{"cx":491,"cy":655,"qfuMag":177,"rwyLenM":2310,"zoom":1,"panX":0,"panY":0}},"LFKC-36":{"mode":"AE","fields":{"ap-oaci":"LFKC","ap-name":"Calvi Ste-Catherine","ap-qfu":"357","ap-rwy-len":"2310","ap-thr-ft":"210","ap-thr-m":"64.0","sl-mass":"3680","sl-alt":"200","sl-temp":"15","sl-surf":"1.0","sl-eap":"0","in-eap":"0","w-dir":"357","w-spd":"10"},"obstacles":[{"name":"CV 375 (zone parachutisme)","dist":500,"altFt":375,"htM":0,"showOnMap":true},{"name":"Relief NW côtier","dist":1500,"altFt":434,"htM":0,"showOnMap":true}],"vacState":{"cx":491,"cy":655,"qfuMag":357,"rwyLenM":2310,"zoom":1,"panX":0,"panY":0}},"LFKJ-20":{"mode":"AE","fields":{"ap-oaci":"LFKJ","ap-name":"Ajaccio Napoléon Bonaparte","ap-qfu":"202","ap-rwy-len":"2300","ap-thr-ft":"18","ap-thr-m":"5.5","sl-mass":"3680","sl-alt":"0","sl-temp":"15","sl-surf":"1.0","sl-eap":"0","in-eap":"0","w-dir":"202","w-spd":"8"},"obstacles":[],"vacState":{"cx":438,"cy":620,"qfuMag":209,"rwyLenM":2300,"zoom":1,"panX":0,"panY":0},"vacAP":"LFKJ"},"LFKJ-02":{"mode":"AE","fields":{"ap-oaci":"LFKJ","ap-name":"Ajaccio Napoléon Bonaparte","ap-qfu":"22","ap-rwy-len":"2300","ap-thr-ft":"18","ap-thr-m":"5.5","sl-mass":"3680","sl-alt":"0","sl-temp":"15","sl-surf":"1.0","sl-eap":"0","in-eap":"0","w-dir":"22","w-spd":"8"},"obstacles":[],"vacState":{"cx":438,"cy":620,"qfuMag":29,"rwyLenM":2300,"zoom":1,"panX":0,"panY":0},"vacAP":"LFKJ"}}; // profils pré-chargés (ne jamais modifier)
 let profiles = JSON.parse(JSON.stringify(BUILTIN_PROFILES)); // copie mutable
 let currentProfile = null;
 
@@ -1256,25 +1256,9 @@ function saveProfile(){
 function loadProfile(name){
   if(!profiles[name]) return;
   currentProfile = name;
-  applyState(profiles[name]);
+  applyState(profiles[name]); // applyState gère le changement d'AP et restaure la position par AP
   renderProfileList();
   update();
-  // Auto-switch VAC map to match the loaded profile's airport
-  const profAP = (profiles[name].fields && profiles[name].fields['ap-oaci']) || '';
-  if(profAP && VAC_CONFIGS[profAP] && profAP !== vacActiveAP){
-    vacActiveAP = profAP;
-    const cfg = vacCfg();
-    if(profiles[name].vacState){
-      vacState = {...VAC_DEFAULT, ...profiles[name].vacState};
-    } else {
-      vacState = { qfuMag:cfg.defaultQFU, rwyLenM:cfg.defaultLen,
-                   cx:cfg.defaultCx, cy:cfg.defaultCy, zoom:1, panX:0, panY:0 };
-    }
-  }
-  const sel=document.getElementById('vac-ap-select');
-  if(sel) sel.value = vacActiveAP;
-  const lbl=document.getElementById('vac-ap-label');
-  if(lbl && VAC_CONFIGS[vacActiveAP]) lbl.textContent = vacActiveAP+' '+vacCfg().name;
   drawCompass(); drawVACOverlay();
 }
 
@@ -1309,29 +1293,27 @@ function applyState(s){
   if(s.mode) mode = s.mode;
   // Détecter l'aéroport depuis vacAP ou depuis le champ ap-oaci
   const apCode = s.vacAP || (s.fields && s.fields['ap-oaci']) || vacActiveAP;
-  if(apCode && VAC_CONFIGS[apCode]){
+  if(apCode && VAC_CONFIGS[apCode] && apCode !== vacActiveAP){
+    // Changer d'aéroport : sauvegarder la position courante, changer d'AP
+    saveCurrentAPPosition();
     vacActiveAP = apCode;
     const sel=document.getElementById('vac-ap-select');
     const lbl=document.getElementById('vac-ap-label');
     if(sel) sel.value = vacActiveAP;
     if(lbl) lbl.textContent = vacActiveAP+' '+vacCfg().name;
+    // Restaurer le positionnement sauvegardé pour ce nouvel AP (jamais depuis le profil)
+    restoreAPPosition(vacActiveAP);
+  } else if(apCode && VAC_CONFIGS[apCode]){
+    // Même aéroport : le positionnement ne change pas
+    const sel=document.getElementById('vac-ap-select');
+    const lbl=document.getElementById('vac-ap-label');
+    if(sel) sel.value = vacActiveAP;
+    if(lbl) lbl.textContent = vacActiveAP+' '+vacCfg().name;
   }
+  // Appliquer QFU et longueur piste depuis le profil (mais PAS cx/cy/zoom/pan)
   if(s.vacState){
-    const incomingAP = s.vacAP || (s.fields && s.fields['ap-oaci']) || vacActiveAP;
-    if(incomingAP === vacActiveAP){
-      // Même aéroport : on ne change QUE le QFU et la longueur piste
-      // → le pan/zoom/cx/cy restent ceux de la vue courante (pas de saut)
-      vacState.qfuMag  = s.vacState.qfuMag  !== undefined ? s.vacState.qfuMag  : vacState.qfuMag;
-      vacState.rwyLenM = s.vacState.rwyLenM !== undefined ? s.vacState.rwyLenM : vacState.rwyLenM;
-    } else {
-      // Aéroport différent : restauration complète
-      vacState = {...VAC_DEFAULT, ...s.vacState};
-      const activeCfg = VAC_CONFIGS[incomingAP];
-      if(activeCfg && activeCfg.defaultCx !== undefined){
-        vacState.cx = activeCfg.defaultCx;
-        vacState.cy = activeCfg.defaultCy;
-      }
-    }
+    if(s.vacState.qfuMag  !== undefined) vacState.qfuMag  = s.vacState.qfuMag;
+    if(s.vacState.rwyLenM !== undefined) vacState.rwyLenM = s.vacState.rwyLenM;
     // Resync controls
     const slQfu = document.getElementById('vac-qfu');
     const slLen = document.getElementById('vac-rwylen');
@@ -2089,10 +2071,10 @@ const VAC_CONFIGS = {
     yRef1: 755,  latRef1: 42.5000,
     compassOffset: 0,
     displayOffset: -40,
-    defaultQFU: 180,
+    defaultQFU: 177,
     defaultCx: 491,
     defaultCy: 655,
-    defaultLen: 1500,
+    defaultLen: 2310,
     pxPerM: 0.03149,
   },
 };
@@ -2110,16 +2092,61 @@ function geo2pxOf(cfg,lat,lon){ return {x:(lon-cfg.lonRef0)/lonPxOf(cfg)+cfg.xRe
 // ── État piste
 const VAC_DEFAULT = { cx:634.5, cy:698, qfuMag:5, rwyLenM:3032, zoom:1, panX:0, panY:0 };
 const VAC_STORAGE_KEY = 'p2012_vac_state_v1';
+// Clé dédiée au positionnement par aéroport (indépendant des profils)
+const VAC_POS_KEY = 'p2012_vac_positions_v1';
+
+// vacPositions : { 'LFKB': {cx,cy,zoom,panX,panY}, 'LFKJ': {...}, ... }
+let vacPositions = {};
+
+function saveVACPositions(){
+  try{ localStorage.setItem(VAC_POS_KEY, JSON.stringify(vacPositions)); }catch(e){}
+}
+function loadVACPositions(){
+  try{
+    const raw = localStorage.getItem(VAC_POS_KEY);
+    if(raw) vacPositions = JSON.parse(raw);
+  }catch(e){ vacPositions = {}; }
+}
+// Sauvegarde le positionnement de l'aéroport actif
+function saveCurrentAPPosition(){
+  const ap = vacActiveAP;
+  vacPositions[ap] = { cx:vacState.cx, cy:vacState.cy,
+                       zoom:vacState.zoom, panX:vacState.panX, panY:vacState.panY };
+  saveVACPositions();
+}
+// Restaure le positionnement sauvegardé pour un aéroport (ou les valeurs par défaut)
+function restoreAPPosition(ap){
+  if(vacPositions[ap]){
+    const p = vacPositions[ap];
+    vacState.cx   = p.cx   !== undefined ? p.cx   : vacState.cx;
+    vacState.cy   = p.cy   !== undefined ? p.cy   : vacState.cy;
+    vacState.zoom = p.zoom !== undefined ? p.zoom : 1;
+    vacState.panX = p.panX !== undefined ? p.panX : 0;
+    vacState.panY = p.panY !== undefined ? p.panY : 0;
+  } else {
+    const cfg = VAC_CONFIGS[ap];
+    if(cfg){ vacState.cx=cfg.defaultCx; vacState.cy=cfg.defaultCy; }
+    vacState.zoom=1; vacState.panX=0; vacState.panY=0;
+  }
+}
 
 function saveVACState(){
-  try{ localStorage.setItem(VAC_STORAGE_KEY, JSON.stringify(vacState)); }catch(e){}
+  // Maintenu pour compatibilité export/import : sauvegarde qfuMag+rwyLenM seulement
+  try{ localStorage.setItem(VAC_STORAGE_KEY, JSON.stringify({
+    qfuMag: vacState.qfuMag, rwyLenM: vacState.rwyLenM
+  })); }catch(e){}
+  // Positionnement sauvegardé séparément par aéroport
+  saveCurrentAPPosition();
 }
 function loadVACState(){
+  loadVACPositions();
   try{
     const raw = localStorage.getItem(VAC_STORAGE_KEY);
     if(!raw) return false;
     const saved = JSON.parse(raw);
     vacState = {...VAC_DEFAULT, ...saved};
+    // Restaurer le positionnement sauvegardé de l'aéroport actif
+    restoreAPPosition(vacActiveAP);
     return true;
   }catch(e){ return false; }
 }
@@ -2169,12 +2196,12 @@ function rotRwy(deltaDeg){
 }
 
 function resetVACPos(){
-  vacState = { ...VAC_DEFAULT };
-  document.getElementById('vac-qfu').value = VAC_DEFAULT.qfuMag;
-  document.getElementById('vac-qfu-lbl').textContent = String(qfuDisplay()).padStart(3,'0')+'°M';
-  document.getElementById('vac-rwylen').value = VAC_DEFAULT.rwyLenM;
-  document.getElementById('vac-len-lbl').textContent = VAC_DEFAULT.rwyLenM+' m';
-  drawCompass(); drawVACOverlay();
+  // Réinitialise uniquement le positionnement de la piste (pas QFU ni longueur)
+  const cfg = vacCfg();
+  vacState.cx=cfg.defaultCx; vacState.cy=cfg.defaultCy;
+  vacState.zoom=1; vacState.panX=0; vacState.panY=0;
+  saveCurrentAPPosition();
+  drawVACOverlay();
 }
 
 // ── Drag piste + zoom/pan carte
@@ -2314,7 +2341,7 @@ function toggleVACLink(){
 // Bouton reset zoom
 function resetVACZoom(){
   vacState.zoom=1; vacState.panX=0; vacState.panY=0;
-  drawVACOverlay(); saveVACState();
+  drawVACOverlay(); saveCurrentAPPosition();
 }
 
 // ── Compas interactif
@@ -2341,14 +2368,19 @@ function updateCompassFromEvent(e){
 
 function switchVACAP(ap){
   if(!VAC_CONFIGS[ap]) return;
+  // Sauvegarder le positionnement de l'AP courant avant de changer
+  saveCurrentAPPosition();
   vacActiveAP = ap;
   const cfg = vacCfg();
   const lbl = document.getElementById('vac-ap-label');
   if(lbl) lbl.textContent = ap+' '+cfg.name;
   const sel = document.getElementById('vac-ap-select');
   if(sel) sel.value = ap;
-  vacState = { qfuMag:cfg.defaultQFU, rwyLenM:cfg.defaultLen,
-               cx:cfg.defaultCx, cy:cfg.defaultCy, zoom:1, panX:0, panY:0 };
+  // QFU et longueur : valeurs par défaut de la config
+  vacState.qfuMag  = cfg.defaultQFU;
+  vacState.rwyLenM = cfg.defaultLen;
+  // Positionnement : restaurer la position sauvegardée pour cet AP
+  restoreAPPosition(ap);
   const slQfu=document.getElementById('vac-qfu');
   const slLen=document.getElementById('vac-rwylen');
   const lblQfu=document.getElementById('vac-qfu-lbl');
@@ -2678,12 +2710,14 @@ window.addEventListener('resize',()=>{
 // SAUVEGARDE / RESTAURATION COMPLÈTE
 // ═══════════════════════════════════════════════════════════════
 function exportAllData(){
+  saveCurrentAPPosition(); // s'assurer que la position courante est bien sauvegardée
   const data = {
     version: 1,
     exportDate: new Date().toISOString(),
     profiles: JSON.parse(localStorage.getItem('p2012_profiles_v1') || '{}'),
     lastState: JSON.parse(localStorage.getItem('p2012_laststate_v1') || 'null'),
-    vacState: JSON.parse(localStorage.getItem('p2012_vac_state_v1') || 'null')
+    vacState: JSON.parse(localStorage.getItem('p2012_vac_state_v1') || 'null'),
+    vacPositions: JSON.parse(localStorage.getItem('p2012_vac_positions_v1') || '{}')
   };
   const blob = new Blob([JSON.stringify(data, null, 2)], {type: 'application/json'});
   const url = URL.createObjectURL(blob);
@@ -2714,7 +2748,13 @@ function importAllData(event){
       }
       if(data.vacState){
         localStorage.setItem('p2012_vac_state_v1', JSON.stringify(data.vacState));
-        vacState = {...VAC_DEFAULT, ...data.vacState};
+        if(data.vacState.qfuMag  !== undefined) vacState.qfuMag  = data.vacState.qfuMag;
+        if(data.vacState.rwyLenM !== undefined) vacState.rwyLenM = data.vacState.rwyLenM;
+      }
+      if(data.vacPositions){
+        localStorage.setItem('p2012_vac_positions_v1', JSON.stringify(data.vacPositions));
+        vacPositions = data.vacPositions;
+        restoreAPPosition(vacActiveAP);
       }
       renderProfileList();
       update();
