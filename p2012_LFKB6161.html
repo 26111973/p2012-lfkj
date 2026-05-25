@@ -431,21 +431,21 @@
 <style>
 *{box-sizing:border-box;margin:0;padding:0}
 :root{
-  --bg:#0d1b2a;
-  --bg2:#132233;
-  --bg3:#1a2e42;
-  --bg4:#1f3650;
-  --border:#2a4560;
-  --border2:#1e3550;
+  --bg:#f0f4f8;
+  --bg2:#e2eaf2;
+  --bg3:#d6e3ee;
+  --bg4:#c8d8e8;
+  --border:#a8bfd4;
+  --border2:#b8ccd8;
   --accent:#3B8BD4;
-  --accent2:#5aa3e8;
-  --warn:#EF9F27;
-  --danger:#E24B4A;
-  --ok:#1D9E75;
-  --text:#c8dcea;
-  --text2:#7a9db8;
-  --text3:#4a6e88;
-  --white:#e8f4ff;
+  --accent2:#1a5fa8;
+  --warn:#a06010;
+  --danger:#b52020;
+  --ok:#0f7a56;
+  --text:#1a2e42;
+  --text2:#3a5e7a;
+  --text3:#5a7e98;
+  --white:#0d1b2a;
   --font:'IBM Plex Sans',sans-serif;
   --mono:'IBM Plex Mono',monospace;
   --radius:6px;
@@ -455,10 +455,10 @@ body{background:var(--bg);color:var(--text);font-family:var(--font);font-size:13
 .app{max-width:1320px;margin:0 auto;padding:1rem}
 
 /* ── TOP BAR ── */
-.topbar{background:linear-gradient(135deg,#0a1928 0%,#0c2440 100%);border:1px solid var(--border);border-radius:var(--radius-lg);padding:12px 16px;margin-bottom:12px;display:flex;align-items:flex-start;justify-content:space-between;gap:12px}
+.topbar{background:linear-gradient(135deg,#ddeaf6 0%,#c8dcea 100%);border:1px solid var(--border);border-radius:var(--radius-lg);padding:12px 16px;margin-bottom:12px;display:flex;align-items:flex-start;justify-content:space-between;gap:12px}
 .topbar-left{display:flex;flex-direction:column;gap:3px}
 h1{font-size:14px;font-weight:600;color:var(--white);font-family:var(--mono);letter-spacing:.03em;display:flex;align-items:center;gap:8px}
-.afm-pill{font-size:8px;font-weight:700;padding:2px 7px;border-radius:4px;background:rgba(59,139,212,0.25);color:var(--accent2);border:1px solid rgba(59,139,212,0.3);letter-spacing:.08em}
+.afm-pill{font-size:8px;font-weight:700;padding:2px 7px;border-radius:4px;background:rgba(59,139,212,0.18);color:#1a60a8;border:1px solid rgba(59,139,212,0.45);letter-spacing:.08em}
 .sub{font-size:10px;color:var(--text3);font-family:var(--mono)}
 
 /* ── PROFILE MANAGER (the new section) ── */
@@ -467,7 +467,7 @@ h1{font-size:14px;font-weight:600;color:var(--white);font-family:var(--mono);let
 .pb-label{font-size:10px;font-weight:600;color:var(--text3);text-transform:uppercase;letter-spacing:.07em;white-space:nowrap}
 .profile-list{display:flex;gap:6px;flex-wrap:wrap;flex:1;max-height:80px;overflow-y:auto}
 .profile-chip{display:inline-flex;align-items:center;gap:5px;padding:4px 10px;border-radius:20px;border:1px solid var(--border);background:var(--bg3);color:var(--text2);font-size:11px;font-family:var(--mono);cursor:pointer;transition:all .15s;white-space:nowrap}
-.profile-chip.active{background:rgba(59,139,212,0.18);border-color:var(--accent);color:var(--accent2)}
+.profile-chip.active{background:rgba(59,139,212,0.18);border-color:var(--accent);color:#1a5fa8}
 .profile-chip .del-p{color:var(--danger);font-size:12px;margin-left:2px;opacity:.6;line-height:1}
 .profile-chip .del-p:hover{opacity:1}
 .pb-actions{display:flex;gap:6px;align-items:center;flex-wrap:wrap}
@@ -475,7 +475,7 @@ h1{font-size:14px;font-weight:600;color:var(--white);font-family:var(--mono);let
 .pb-input:focus{border-color:var(--accent)}
 .pb-btn{background:none;border:1px solid var(--border);border-radius:var(--radius);color:var(--text2);font-size:11px;padding:4px 10px;cursor:pointer;transition:all .15s;font-family:var(--font)}
 .pb-btn:hover{border-color:var(--accent);color:var(--accent2)}
-.pb-btn.primary{background:rgba(59,139,212,0.18);border-color:var(--accent);color:var(--accent2)}
+.pb-btn.primary{background:rgba(59,139,212,0.18);border-color:var(--accent);color:#1a5fa8}
 .pb-btn.danger{border-color:rgba(226,75,74,.3);color:var(--danger)}
 .pb-note{font-size:9px;color:var(--text3);margin-top:6px;padding-top:6px;border-top:1px solid var(--border2)}
 
@@ -483,11 +483,11 @@ h1{font-size:14px;font-weight:600;color:var(--white);font-family:var(--mono);let
 .topbar-right{display:flex;flex-direction:column;align-items:flex-end;gap:5px}
 .ap-label{font-size:9px;color:var(--text3);text-transform:uppercase;letter-spacing:.07em;margin-bottom:2px}
 .ap-block{display:flex;align-items:center;gap:5px;flex-wrap:wrap;justify-content:flex-end}
-.ap-input{background:rgba(255,255,255,0.07);border:1px solid rgba(255,255,255,0.12);border-radius:var(--radius);color:var(--white);font-size:11px;font-weight:600;padding:3px 7px;outline:none;font-family:var(--mono)}
-.ap-input:focus{background:rgba(255,255,255,0.12);border-color:var(--accent)}
+.ap-input{background:rgba(0,0,0,0.05);border:1px solid rgba(0,0,0,0.18);border-radius:var(--radius);color:var(--white);font-size:11px;font-weight:600;padding:3px 7px;outline:none;font-family:var(--mono)}
+.ap-input:focus{background:rgba(0,0,0,0.08);border-color:var(--accent)}
 .ap-sep{color:var(--text3);font-size:12px}
-.rwy-input{background:rgba(255,255,255,0.07);border:1px solid rgba(255,255,255,0.12);border-radius:var(--radius);color:var(--white);font-size:11px;font-weight:600;padding:3px 6px;outline:none;width:60px;text-align:center;font-family:var(--mono)}
-.rwy-input:focus{background:rgba(255,255,255,0.12);border-color:var(--accent)}
+.rwy-input{background:rgba(0,0,0,0.05);border:1px solid rgba(0,0,0,0.18);border-radius:var(--radius);color:var(--white);font-size:11px;font-weight:600;padding:3px 6px;outline:none;width:60px;text-align:center;font-family:var(--mono)}
+.rwy-input:focus{background:rgba(0,0,0,0.08);border-color:var(--accent)}
 .rwy-num-badge{background:rgba(255,255,255,0.15);border:1px solid rgba(255,255,255,0.25);border-radius:var(--radius);padding:2px 8px;font-size:12px;font-weight:700;color:#fff;font-family:var(--mono);min-width:34px;text-align:center}
 
 /* ── PAGES ── */
@@ -512,7 +512,7 @@ hr{border:none;border-top:1px solid var(--border2);margin:8px 0}
 /* ── TABS ── */
 .tabs{display:flex;gap:6px;margin-bottom:10px}
 .tab{flex:1;padding:9px 6px;font-size:11px;font-weight:600;text-align:center;border:2px solid var(--border);border-radius:var(--radius);cursor:pointer;background:var(--bg3);color:var(--text2);transition:all .15s;line-height:1.3;font-family:var(--font)}
-.tab.on.ae{background:rgba(59,139,212,.2);color:var(--accent2);border-color:var(--accent)}
+.tab.on.ae{background:rgba(59,139,212,.22);color:#1a5fa8;border-color:var(--accent)}
 .tab.on.oei{background:rgba(239,159,39,.18);color:var(--warn);border-color:var(--warn)}
 
 /* ── METRICS ── */
@@ -527,10 +527,10 @@ hr{border:none;border-top:1px solid var(--border2);margin:8px 0}
 
 /* ── BADGES ── */
 .badge{display:inline-flex;align-items:center;gap:4px;font-size:10px;font-weight:600;padding:3px 10px;border-radius:12px;font-family:var(--mono)}
-.badge.ok{background:rgba(29,158,117,.18);color:var(--ok);border:1px solid rgba(29,158,117,.3)}
-.badge.nok{background:rgba(226,75,74,.18);color:var(--danger);border:1px solid rgba(226,75,74,.3)}
-.badge.warn{background:rgba(239,159,39,.18);color:var(--warn);border:1px solid rgba(239,159,39,.3)}
-.oei-tag{font-size:9px;padding:2px 7px;border-radius:8px;background:rgba(239,159,39,.18);color:var(--warn);font-weight:600;border:1px solid rgba(239,159,39,.3)}
+.badge.ok{background:rgba(29,158,117,.15);color:#0f7a56;border:1px solid rgba(29,158,117,.4)}
+.badge.nok{background:rgba(226,75,74,.15);color:#b52020;border:1px solid rgba(226,75,74,.4)}
+.badge.warn{background:rgba(239,159,39,.15);color:#a06010;border:1px solid rgba(239,159,39,.4)}
+.oei-tag{font-size:9px;padding:2px 7px;border-radius:8px;background:rgba(239,159,39,.15);color:#a06010;font-weight:600;border:1px solid rgba(239,159,39,.4)}
 
 /* ── CANVAS ── */
 canvas{width:100%;display:block;border-radius:var(--radius);border:1px solid var(--border2)}
@@ -556,7 +556,7 @@ canvas{width:100%;display:block;border-radius:var(--radius);border:1px solid var
 .obs2-table th:last-child{border-right:none}
 .obs2-table td{padding:3px 4px;border-bottom:1px solid var(--border2);vertical-align:middle;text-align:center}
 .obs2-table td:nth-child(2){text-align:left}
-.obs2-table tr.obs-ok td{background:rgba(29,158,117,.12)}
+.obs2-table tr.obs-ok td{background:rgba(29,158,117,.14)}
 .obs2-table tr.obs-ok td:first-child{border-left:3px solid var(--ok)}
 .obs2-table tr.obs-nok td{background:rgba(226,75,74,.14)}
 .obs2-table tr.obs-nok td:first-child{border-left:3px solid var(--danger)}
@@ -1159,7 +1159,7 @@ canvas{width:100%;display:block;border-radius:var(--radius);border:1px solid var
     </div>
 
     <!-- CANVAS -->
-    <div style="position:relative;width:100%;background:#0d1b2a">
+    <div style="position:relative;width:100%;background:#f0f4f8">
       <canvas id="vac-canvas" style="width:100%;display:block;border-radius:0;border:none;cursor:grab" height="1483" width="1286"></canvas>
     </div>
 
@@ -1289,7 +1289,7 @@ function applyState(s){
     const el = document.getElementById(id);
     if(el && val !== undefined) el.value = val;
   });
-  if(Array.isArray(s.obstacles) && s.obstacles.length > 0) obstacles = s.obstacles;
+  if(Array.isArray(s.obstacles)) obstacles = JSON.parse(JSON.stringify(s.obstacles));
   if(s.mode) mode = s.mode;
   // Détecter l'aéroport depuis vacAP ou depuis le champ ap-oaci
   const apCode = s.vacAP || (s.fields && s.fields['ap-oaci']) || vacActiveAP;
@@ -1332,12 +1332,22 @@ function applyState(s){
 
 function persistProfiles(){
   try {
-    // Sauvegarder uniquement les profils utilisateur (hors builtins)
-    const userProfiles = {};
+    // Sauvegarder tous les profils (builtins modifiés + user), sauf les builtins non modifiés
+    const toSave = {};
     Object.keys(profiles).forEach(k => {
-      if(!BUILTIN_PROFILES[k]) userProfiles[k] = profiles[k];
+      // Toujours sauvegarder les profils user
+      // Pour les builtins, sauvegarder uniquement si les obstacles ont été modifiés
+      if(!BUILTIN_PROFILES[k]){
+        toSave[k] = profiles[k];
+      } else {
+        const builtinObs = JSON.stringify(BUILTIN_PROFILES[k].obstacles || []);
+        const currentObs = JSON.stringify(profiles[k].obstacles || []);
+        if(builtinObs !== currentObs){
+          toSave[k] = profiles[k];
+        }
+      }
     });
-    localStorage.setItem(PROFILES_KEY, JSON.stringify(userProfiles));
+    localStorage.setItem(PROFILES_KEY, JSON.stringify(toSave));
   } catch(e){}
 }
 
@@ -1346,9 +1356,19 @@ function loadPersistedProfiles(){
     const raw = localStorage.getItem(PROFILES_KEY);
     if(raw) {
       const saved = JSON.parse(raw);
-      // Les profils user (localStorage) + les builtins (toujours présents)
-      // Les builtins ont priorité pour éviter qu'une ancienne version les écrase
-      profiles = Object.assign({}, saved, BUILTIN_PROFILES);
+      // Base : copie des builtins d'origine
+      profiles = JSON.parse(JSON.stringify(BUILTIN_PROFILES));
+      // Fusionner : les profils sauvegardés (user ou builtins modifiés) ont priorité
+      // pour préserver les obstacles modifiés par l'utilisateur
+      Object.keys(saved).forEach(k => {
+        if(profiles[k]){
+          // Profil builtin : on fusionne en préservant les obstacles sauvegardés
+          profiles[k] = Object.assign({}, profiles[k], { obstacles: saved[k].obstacles });
+        } else {
+          // Profil user : on l'ajoute tel quel
+          profiles[k] = saved[k];
+        }
+      });
     } else {
       profiles = JSON.parse(JSON.stringify(BUILTIN_PROFILES));
     }
@@ -1930,6 +1950,11 @@ function drawCanvas(r, rwyLen){
 // LAST STATE (auto-save, not a named profile)
 // ═══════════════════════════════════════════════════════════════
 function saveLastState(){
+  // Synchroniser les obstacles dans le profil actif (builtin ou user)
+  if(currentProfile && profiles[currentProfile]){
+    profiles[currentProfile].obstacles = JSON.parse(JSON.stringify(obstacles));
+    persistProfiles();
+  }
   try { localStorage.setItem(LASTSTATE_KEY, JSON.stringify(captureState())); } catch(e){}
 }
 function loadLastState(){
